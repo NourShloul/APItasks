@@ -1,0 +1,20 @@
+{
+  "name": "Nour",
+  "age": 25,
+  "isStudent": false,
+  "courses": [
+    {
+      "name": "HTML",
+      "grade": "A"
+    },
+    {
+      "name": "CSS",
+      "grade": "B"
+    }
+  ],
+  "address": {
+    "street": "123 South St",
+    "city": "Irbid",
+    "zip": "1128"
+  }
+}
