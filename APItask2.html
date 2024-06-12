@@ -36,11 +36,11 @@
       <input type="text" id="majorUni" />
       <br /><br />
       <label for="progLang">Programming Language :</label>
-      <input type="checkbox" id="html" name="progLang" />
+      <input type="checkbox" id="html" />
       <label for="html">HTML</label>
-      <input type="checkbox" id="css" name="progLang" />
+      <input type="checkbox" id="css" />
       <label for="css">CSS</label>
-      <input type="checkbox" id="js" name="progLang" />
+      <input type="checkbox" id="js" />
       <label for="js">JS</label>
       <br />
       <hr />
@@ -49,7 +49,7 @@
       <br />
       <input type="text" id="sibNum" />
       <br />
-      <label for="descripOfSib">Siblings Number :</label>
+      <label for="descripOfSib">description of Siblings :</label>
       <br />
       <input type="text" id="descripOfSib" />
       <br /><br />
@@ -82,17 +82,16 @@
 
           const description = document.getElementById("description").value;
           const majorUni = document.getElementById("majorUni").value;
-          const checkboxes = document.querySelectorAll(
-            'input[type="checkbox"]'
-          );
-          const progLanguages = Array.from(checkboxes)
-            .filter((checkbox) => checkbox.checked)
-            .map((checkbox) => checkbox.name);
+          const html = document.getElementById("html").checked;
+          const css = document.getElementById("css").checked;
+          const js = document.getElementById("js").checked;
 
           const data2 = {
             description: description,
             majorUni: majorUni,
-            progLanguages: progLanguages,
+            html: html,
+            css: css,
+            js: js,
           };
 
           localStorage.setItem("data2", JSON.stringify(data2));
