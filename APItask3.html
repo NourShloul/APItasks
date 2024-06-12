@@ -16,7 +16,7 @@
       let msgError1 = document.getElementById("error1");
 
       firstName.addEventListener("input", Error1);
-      var regx1 = /^[^0-9]*$/;
+      var regx1 = /^[^\d]+$/;
 
       function Error1() {
         if (regx1.test(firstName.value)) {
@@ -39,7 +39,7 @@
       let msgError2 = document.getElementById("error2");
 
       lastName.addEventListener("input", Error2);
-      var regx2 = /^[^0-9]*$/;
+      var regx2 = /^[^\d]+$/;
 
       function Error2() {
         if (regx2.test(lastName.value)) {
@@ -84,7 +84,7 @@
       let msgError4 = document.getElementById("error4");
 
       email.addEventListener("input", Error4);
-      var regx4 = /^[0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+      var regx4 = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
 
       function Error4() {
         if (regx4.test(email.value)) {
