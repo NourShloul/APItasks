@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Task1 11-6</title>
+    <style>
+      #images {
+        height: 200px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="animals">Animals:</label>
+    <select id="animals"></select>
+    <br /><br />
+    <img id="images" src="" alt="animals" />
+    <script>
+      const url = "https://66681676f53957909ff67af8.mockapi.io/users/Animals";
+
+      async function animalSelector() {
+        const response = await fetch(url);
+        console.log("response", response);
+        const datatoJson = await response.json();
+        console.log("datatoJson", datatoJson);
+
+        let select = document.getElementById("animals");
+        let img = document.getElementById("images");
+        datatoJson.forEach((animal) => {
+          let option = document.createElement("option");
+          option.value = animal.image;
+          option.innerText = animal.name;
+          option.id = animal.id;
+          select.appendChild(option);
+        });
+
+        images.src = datatoJson[0].image;
+        select.addEventListener("change", function () {
+          for (let i = 0; i < datatoJson.length; i++) {
+            img.src = select.value;
+          }
+        });
+      }
+      animalSelector();
+    </script>
+  </body>
+</html>

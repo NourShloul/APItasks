@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Task2 11-6</title>
+  </head>
+  <body>
+    <h1>display each group input as one card "using local storage"</h1>
+    <form id="info">
+      <label for="name">Name : </label>
+      <input type="text" id="name" />
+      <br /><br />
+      <label for="age">Age : </label>
+      <input type="number" id="age" />
+      <br /><br />
+      <label for="gender">Gender : </label>
+      <select name="gender" id="gender">
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+      <br /><br />
+      <label for="Bdate">Birth Date : </label>
+      <input type="date" id="Bdate" />
+      <br /><br />
+      <label for="img">Your Image :</label>
+      <input type="text" id="img" />
+      <br />
+      <hr />
+      <br />
+
+      <label for="description">Description : </label>
+      <input type="text" id="description" />
+      <br /><br />
+      <label for="majorUni">Major & University : </label>
+      <input type="text" id="majorUni" />
+      <br /><br />
+      <label for="progLang">Programming Language :</label>
+      <input type="checkbox" id="html" name="progLang" />
+      <label for="html">HTML</label>
+      <input type="checkbox" id="css" name="progLang" />
+      <label for="css">CSS</label>
+      <input type="checkbox" id="js" name="progLang" />
+      <label for="js">JS</label>
+      <br />
+      <hr />
+      <br />
+      <label for="sibNum">Siblings Number :</label>
+      <br />
+      <input type="text" id="sibNum" />
+      <br />
+      <label for="descripOfSib">Siblings Number :</label>
+      <br />
+      <input type="text" id="descripOfSib" />
+      <br /><br />
+      <input type="submit" />
+    </form>
+
+    <script>
+      document
+        .getElementById("info")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const age = document.getElementById("age").value;
+          const gender = document.getElementById("gender").value;
+          const Bdate = document.getElementById("Bdate").value;
+          const img = document.getElementById("img").value;
+
+          const data1 = {
+            name: name,
+            age: age,
+            gender: gender,
+            Bdate: Bdate,
+            img: img,
+          };
+
+          localStorage.setItem("data1", JSON.stringify(data1));
+          console.log(data1);
+          console.log(JSON.stringify(data1));
+
+          const description = document.getElementById("description").value;
+          const majorUni = document.getElementById("majorUni").value;
+          const checkboxes = document.querySelectorAll(
+            'input[type="checkbox"]'
+          );
+          const progLanguages = Array.from(checkboxes)
+            .filter((checkbox) => checkbox.checked)
+            .map((checkbox) => checkbox.name);
+
+          const data2 = {
+            description: description,
+            majorUni: majorUni,
+            progLanguages: progLanguages,
+          };
+
+          localStorage.setItem("data2", JSON.stringify(data2));
+          console.log(data2);
+          console.log(JSON.stringify(data2));
+
+          const sibNum = document.getElementById("sibNum").value;
+          const descripOfSib = document.getElementById("descripOfSib").value;
+
+          const data3 = {
+            sibNum: sibNum,
+            descripOfSib: descripOfSib,
+          };
+          localStorage.setItem("data3", JSON.stringify(data3));
+          console.log(data3);
+          console.log(JSON.stringify(data3));
+        });
+    </script>
+  </body>
+</html>

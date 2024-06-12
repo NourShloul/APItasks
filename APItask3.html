@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Task3 11-6</title>
+  </head>
+  <body>
+    <label for="firstName">Enter a Fname:</label><br />
+    <input type="text" id="firstName" />
+    <span id="error1" style="color: red"></span>
+    <br />
+
+    <script>
+      let firstName = document.getElementById("firstName");
+      let msgError1 = document.getElementById("error1");
+
+      firstName.addEventListener("input", Error1);
+      var regx1 = /^[^0-9]*$/;
+
+      function Error1() {
+        if (regx1.test(firstName.value)) {
+          msgError1.innerHTML = "";
+        } else {
+          msgError1.innerHTML = "Numbers are not allow";
+        }
+      }
+    </script>
+    <br />
+
+    <!-- Last Name -->
+    <label for="lastName">Enter a Lname:</label><br />
+    <input type="text" id="lastName" />
+    <span id="error2" style="color: red"></span>
+    <br />
+
+    <script>
+      let lastName = document.getElementById("lastName");
+      let msgError2 = document.getElementById("error2");
+
+      lastName.addEventListener("input", Error2);
+      var regx2 = /^[^0-9]*$/;
+
+      function Error2() {
+        if (regx2.test(lastName.value)) {
+          msgError2.innerHTML = "";
+        } else {
+          msgError2.innerHTML = "Numbers are not allow";
+        }
+      }
+    </script>
+    <br />
+    <div>
+      <label for="Bdate">Enter a Bdate:</label><br />
+      <input type="text" id="Bdate" />
+      <span id="error3" style="color: red"></span>
+    </div>
+
+    <script>
+      let Bdate = document.getElementById("Bdate");
+      let msgError3 = document.getElementById("error3");
+
+      Bdate.addEventListener("input", Error3);
+      var regx3 = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+
+      function Error3() {
+        if (regx3.test(Bdate.value)) {
+          msgError3.innerHTML = "";
+        } else {
+          msgError3.innerHTML = "The format should be dd/mm/yyyy";
+        }
+      }
+    </script>
+    <br />
+    <div>
+      <label for="email">Enter an email:</label><br />
+      <input type="text" id="email" />
+      <span id="error4" style="color: red"></span>
+    </div>
+    <br />
+
+    <script>
+      let email = document.getElementById("email");
+      let msgError4 = document.getElementById("error4");
+
+      email.addEventListener("input", Error4);
+      var regx4 = /^[0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+      function Error4() {
+        if (regx4.test(email.value)) {
+          msgError4.innerHTML = "";
+        } else {
+          msgError4.innerHTML = "The e-mail is not valid";
+        }
+      }
+    </script>
+
+    <div>
+      <label for="conf-email">Confirm Email:</label><br />
+      <input type="text" id="conf-email" />
+      <span id="error5" style="color: red"></span>
+    </div>
+    <br />
+
+    <script>
+      let confEmail = document.getElementById("conf-email");
+      let msgError5 = document.getElementById("error5");
+
+      confEmail.addEventListener("input", Error5);
+      function Error5() {
+        if (confEmail.value != email.value) {
+          msgError5.innerHTML = "Not the same email";
+        } else {
+          msgError5.innerHTML = "";
+        }
+      }
+    </script>
+
+    <div>
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" />
+      <span id="error6" style="color: red"></span>
+    </div>
+
+    <script>
+      let mainPassword = document.getElementById("password");
+      let msgError6 = document.getElementById("error6");
+
+      mainPassword.addEventListener("input", Error6);
+
+      function Error6() {
+        if (mainPassword.value.length < 6) {
+          msgError6.innerHTML = "Shortly password";
+        } else {
+          msgError6.innerHTML = "";
+        }
+      }
+    </script>
+    <br />
+    <div>
+      <label for="confPassword">Confirm Password</label><br />
+      <input type="password" id="confPassword" />
+      <span id="error7" style="color: red"></span>
+    </div>
+
+    <script>
+      let confPassword = document.getElementById("confPassword");
+      let msgError7 = document.getElementById("error7");
+
+      confPassword.addEventListener("input", Error7);
+
+      function Error7() {
+        if (confPassword.value != mainPassword.value) {
+          msgError7.innerHTML = "Not The Same Password";
+        } else {
+          msgError7.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
