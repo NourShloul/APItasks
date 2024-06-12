@@ -84,7 +84,7 @@
       let msgError4 = document.getElementById("error4");
 
       email.addEventListener("input", Error4);
-      var regx4 = /^[a-zA-Z0–9._-]+@[a-zA-Z0–9.-]+\.[a-zA-Z]{2,4}$/;
+      var regx4 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 
       function Error4() {
         if (regx4.test(email.value)) {
@@ -150,10 +150,10 @@
       confPassword.addEventListener("input", Error7);
 
       function Error7() {
-        if (confPassword.value != mainPassword.value) {
-          msgError7.innerHTML = "Not The Same Password";
-        } else {
+        if (confPassword.value == mainPassword.value) {
           msgError7.innerHTML = "";
+        } else {
+          msgError7.innerHTML = "Not The Same Password";
         }
       }
     </script>
