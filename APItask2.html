@@ -24,7 +24,7 @@
       <input type="date" id="Bdate" />
       <br /><br />
       <label for="img">Your Image :</label>
-      <input type="text" id="img" />
+      <input type="url" id="img" />
       <br />
       <hr />
       <br />
@@ -86,12 +86,16 @@
           const css = document.getElementById("css").checked;
           const js = document.getElementById("js").checked;
 
-          const data2 = {
-            description: description,
-            majorUni: majorUni,
+          const progLang = {
             html: html,
             css: css,
             js: js,
+          };
+
+          const data2 = {
+            description: description,
+            majorUni: majorUni,
+            progLang: progLang,
           };
 
           localStorage.setItem("data2", JSON.stringify(data2));
